@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css"> 
+    <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+</head>
+<style>
+.tabs{
+  width: 500px;
+  float: right;
+  margin-left: 5000px;
+  margin: -600px auto;
+
+}
+.tocen{
+  width: 1000px;
+}
+#tabs ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #ff66b2;
+}
+
+#tabs ul li {
+    flex: 1;
+    margin: 0;
+    text-align: center;
+}
+#tabs ul .ui-tabs-active a {
+    background-color: #ff4d94;
+    color: #fff;
+    border: 1px solid #ff66b2;
+}
+#tabs div[id^="tabs-"] {
+    padding: 20px;
+    background-color: #fff;
+    color: #2c2c2c;
+    border-radius: 10px;
+    font-family: "Century Gothic", sans-serif;
+}
+#tabs ul li a:hover {
+    background-color: #ff99cc;
+    color: #2c2c2c;
+}
+
+</style>
+<body>
+    <div class="container">
+        <h1>jQuery UI Tabs - Simple manipulation</h1>
+        <div class="col-1">
+         <h3>widget</h3>
+              <ul><a href="../Accordion.html">Accordion</a></ul>
+              <ul><a href="/pages/Autocomplete.html">Autocomplete</a></ul>
+              <ul><a href="/pages/Button.html">Button</a></ul>
+              <ul><a href="/pages/Checkboxradio.html">Checkboxradio</a></ul>
+              <ul><a href="/pages/Controlgroup.html">Controlgroup</a></ul>
+              <ul><a href="/pages/Datepicker.html">Datepicker</a></ul>
+              <ul><a href="/pages/Dialog.html">Dialog</a></ul>
+              <ul><a href="/pages/Menu.html">Menu</a></ul>
+              <ul><a href="/pages/Progressbar.html">Progressbar</a></ul>
+              <ul><a href="/pages/Selectmenu.html">Selectmenu</a></ul>
+              <ul><a href="/pages/Slider.html">Slider</a></ul>
+              <ul><a href="/pages/Spinner.html">Spinner</a></ul>
+              <ul><a href="/pages/Tabs.html">Tabs</a></ul>
+              <ul><a href="/pages/Tooltip.html">Tooltip</a></ul>
+        
+      </div>
+      <div class="tocen">
+        <div class="tabs">
+          <div id="tabs">
+            <ul>
+              <li><a href="#tabs-1">Project Overview</a></li>
+              <li><a href="#tabs-2">Key Features</a></li>
+              <li><a href="#tabs-3">Future Improvements</a></li>
+            </ul>
+            <div id="tabs-1">
+              <h2>Project Overview</h2>
+              <p>This project is designed to streamline the process of managing data efficiently. Our goal is to provide users with a seamless experience, allowing for quick access to essential features.</p>
+
+            </div>
+            <div id="tabs-2">
+              <h2>Key Features</h2>
+              <ul>
+                <li><strong>User-Friendly Interface:</strong> Navigate with ease and efficiency.</li>
+                <li><strong>Real-Time Data:</strong> Changes are reflected instantly.</li>
+                <li><strong>Customizable Settings:</strong> Tailor your experience according to your needs.</li>
+                <li><strong>Secure Transactions:</strong> Ensuring safety for user data.</li>
+              </ul>
+              
+            </div>
+            <div id="tabs-3">
+              <h2>Future Improvements</h2>
+              <p>We are constantly working on enhancing our application. Upcoming features include:</p>
+              <ul>
+                <li><strong>Enhanced Analytics:</strong> More in-depth data analysis tools.</li>
+                <li><strong>Mobile Application:</strong> A mobile version for on-the-go access.</li>
+                <li><strong>Community Feedback:</strong> Incorporating user suggestions into our updates.</li>
+              </ul>
+              
+            </div>
+          </div>
+           
+              
+        </div>
+          
+         </div>   
+         
+      </div>
+    <footer>
+        <p>College of Information and Computing Sciences &copy; 2022</p>  
+    </footer>
+
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <script>
+      $( function() {
+        $( "#tabs" ).tabs();
+      } );
+      </script>
+</body>
+</html>

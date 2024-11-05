@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css"> 
+    <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+
+    <style>
+    
+    
+
+      /* Style for Menu Container */
+.ui-menu {
+    width: 200px;
+    background-color: #ffe6f2; /* Light pink background */
+    border: 1px solid #c96aa7; /* Pink border */
+    border-radius: 8px;
+    font-family: "Century Gothic", sans-serif;
+}
+
+/* Menu Items */
+.ui-menu .ui-menu-item {
+    padding: 8px 12px;
+    color: #4a4a4a; /* Dark gray text */
+    transition: background-color 0.3s;
+}
+
+/* Hover Effect for Menu Items */
+.ui-menu .ui-menu-item:hover,
+.ui-menu .ui-menu-item-active {
+    background-color: #c96aa7; /* Dark pink background on hover */
+    color: #fff; /* White text on hover */
+    border-radius: 4px;
+}
+
+/* Disabled Menu Items */
+.ui-menu .ui-state-disabled {
+    color: #a3a3a3; /* Gray color for disabled items */
+    background-color: #ffe6f2; /* Light pink background */
+    cursor: not-allowed;
+}
+
+
+/* Nested Submenu Styles */
+.ui-menu .ui-menu-item > ul {
+    background-color: #ffe6f2; /* Light pink background */
+    border: 1px solid #c96aa7;
+    border-radius: 8px;
+}
+      </style>
+</head>
+<body>
+    <div class="container">
+        <h1>jQuery UI Menu - Categories</h1>
+        <div class="row">
+          <div class="col-1">
+            <h3>widget</h3>
+                <ul><a href="../Accordion.html">Accordion</a></ul>
+                <ul><a href="/pages/Autocomplete.html">Autocomplete</a></ul>
+                <ul><a href="/pages/Button.html">Button</a></ul>
+                <ul><a href="/pages/Checkboxradio.html">Checkboxradio</a></ul>
+                <ul><a href="/pages/Controlgroup.html">Controlgroup</a></ul>
+                <ul><a href="/pages/Datepicker.html">Datepicker</a></ul>
+                <ul><a href="/pages/Dialog.html">Dialog</a></ul>
+                <ul><a href="/pages/Menu.html">Menu</a></ul>
+                <ul><a href="/pages/Progressbar.html">Progressbar</a></ul>
+                <ul><a href="/pages/Selectmenu.html">Selectmenu</a></ul>
+                <ul><a href="/pages/Slider.html">Slider</a></ul>
+                <ul><a href="/pages/Spinner.html">Spinner</a></ul>
+                <ul><a href="/pages/Tabs.html">Tabs</a></ul>
+                <ul><a href="/pages/Tooltip.html">Tooltip</a></ul>
+            
+        </div>
+     <div class="menu">
+      <ul id="menu">
+        <li class="ui-state-disabled"><div>Toys (n/a)</div></li>
+        <li><div>Books</div></li>
+        <li><div>Clothing</div></li>
+        <li><div>Electronics</div>
+          <ul>
+            <li class="ui-state-disabled"><div>Home Entertainment</div></li>
+            <li><div>Car Hifi</div></li>
+            <li><div>Utilities</div></li>
+          </ul>
+        </li>
+        <li><div>Movies</div></li>
+        <li><div>Music</div>
+          <ul>
+            <li><div>Rock</div>
+              <ul>
+                <li><div>Alternative</div></li>
+                <li><div>Classic</div></li>
+              </ul>
+            </li>
+            <li><div>Jazz</div>
+              <ul>
+                <li><div>Freejazz</div></li>
+                <li><div>Big Band</div></li>
+                <li><div>Modern</div></li>
+              </ul>
+            </li>
+            <li><div>Pop</div></li>
+          </ul>
+        </li>
+        <li class="ui-state-disabled"><div>Specials (n/a)</div></li>
+      </ul>
+     </div>
+    </div>
+     <footer>
+      <p>College of Information and Computing Sciences &copy; 2022</p>  
+    </footer>
+     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+     <script>
+      $( function() {
+        $( "#menu" ).menu();
+      } );
+      </script>
+      <style>
+      .ui-menu { width: 150px; }
+      </style>
+
+</body>
+</html>

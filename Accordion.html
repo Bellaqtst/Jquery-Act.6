@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <style>
+      
+#accordion {
+    flex: 3;
+    min-width: 0;
+}
+
+ul li {
+    list-style-type: none;
+    padding: 12px;
+    background-color: #1c1c1c;
+    color: #ff99cc;
+    margin: 10px 0;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+ul li:hover {
+    background-color: #333333;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .col-1, #accordion {
+        max-width: 100%;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>jQuery UI Accordion - Sortable</h1>
+        <div class="row">
+            <div class="col-1">
+                <h3>widget</h3>
+                    <ul><a href="../Accordion.html">accordion</a></ul>
+                    <ul><a href="pages/Autocomplete.html">Autocomplete</a></ul>
+                    <ul><a href="pages/Button.html">Button</a></ul>
+                    <ul><a href="./pages/Checkboxradio.html">Checkboxradio</a></ul>
+                    <ul><a href="pages/Controlgroup.html">Controlgroup</a></ul>
+                    <ul><a href="pages/Datepicker.html">Datepicker</a></ul>
+                    <ul><a href="pages/Dialog.html">Dialog</a></ul>
+                    <ul><a href="pages/Menu.html">Menu</a></ul>
+                    <ul><a href="pages/Progressbar.html">Progressbar</a></ul>
+                    <ul><a href="pages/Selectmenu.html">Selectmenu</a></ul>
+                    <ul><a href="pages/Slider.html">Slider</a></ul>
+                    <ul><a href="pages/Spinner.html">Spinner</a></ul>
+                    <ul><a href="pages/Tabs.html">Tabs</a></ul>
+                    <ul><a href="pages/Tooltip.html">Tooltip</a></ul>
+              
+            </div>
+            <div id="accordion">
+                <div class="group">
+                  <h3>Section 1</h3>
+                  <div>
+                    <h2>Introduction to jQuery UI Widgets</h2>
+                    <p>
+                        jQuery UI is a popular library that adds interactive, easy-to-use components to web applications, 
+                        such as accordions, date pickers, and dialogs. These widgets can enhance the user experience 
+                        by allowing more intuitive and responsive interfaces. In this page, we explore some commonly 
+                        used jQuery UI widgets and their applications.
+                    </p>
+                  </div>
+                </div>
+                <div class="group">
+                  <h3>Section 2</h3>
+                  <div>
+                    <h2>Understanding the Accordion Widget</h2>
+                    <p>
+                      The Accordion widget is a powerful tool for organizing large amounts of information in a compact way. By allowing users to expand and collapse sections, it keeps web pages clean and prevents users from feeling overwhelmed by too much information at once. It’s especially useful for FAQ pages, user manuals, or any content that benefits from being divided into categorized sections.
+                  </p>
+                  <p>
+                      The Accordion widget is highly customizable, allowing you to set parameters like the animation speed, the default open section, and even nested accordions for advanced content layering. Using an accordion, you can guide users to focus on specific parts of the content while keeping the rest of the page uncluttered.
+                  </p>                       
+                  </div>
+                </div>
+                <div class="group">
+                  <h3>Section 3</h3>
+                  <div>
+                    <h2>Popular jQuery UI Widgets</h2>
+                    <p>
+                      jQuery UI provides several useful widgets that enhance the interactivity of web pages. Here are a few of the most popular ones and examples of how they can be applied:
+                  </p>
+                  <ul>
+                      <li><strong>Accordion:</strong> Used for FAQs or sectioned content where users can expand or collapse specific items to view details. 
+                          <ul>
+                              <li>Example: An FAQ page where each question serves as a header, and clicking it reveals the answer underneath.</li>
+                          </ul>
+                      </li>
+                      <li><strong>Datepicker:</strong> A calendar popup that lets users select dates easily, commonly used in forms for scheduling.
+                          <ul>
+                              <li>Example: A booking form where users pick their check-in and check-out dates directly from a calendar widget.</li>
+                          </ul>
+                      </li>
+                      <li><strong>Dialog:</strong> Creates modal dialog boxes that can be used for alerts, confirmations, or forms.
+                          <ul>
+                              <li>Example: A confirmation dialog that pops up when users try to delete an item, asking them to confirm or cancel the action.</li>
+                          </ul>
+                      </li>
+                  </ul>                          
+                  </div>
+                </div>
+                <div class="group">
+                  <h3>Section 4</h3>
+                  <div>
+                    <h2>Implementing Sortable Functionality</h2>
+                    <p>
+                      Adding sortable functionality to the Accordion widget enhances its usability by allowing users to rearrange sections as they see fit. This feature is particularly valuable in content-heavy applications where the order of information is essential, such as project management tools, task organizers, or custom dashboards.
+                  </p>
+                  <p>
+                      Sortable functionality can be implemented by enabling drag-and-drop controls, making it intuitive for users to reorganize items. For instance, a user could prioritize tasks in a to-do list by dragging them into a specific order or arrange content categories based on their preferences. This flexibility ensures that the user experience remains personalized and efficient.
+                  </p>
+                  
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>  
+    
+    <footer>
+        <p>College of Information and Computing Sciences &copy; 2022</p>  
+    </footer>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <script>
+        $( function() {
+          $( "#accordion" )
+            .accordion({
+              header: "> div > h3"
+            })
+            .sortable({
+              axis: "y",
+              handle: "h3",
+              stop: function( event, ui ) {
+                // IE doesn't register the blur when sorting
+                // so trigger focusout handlers to remove .ui-state-focus
+                ui.item.children( "h3" ).triggerHandler( "focusout" );
+       
+                // Refresh accordion to handle new order
+                $( this ).accordion( "refresh" );
+              }
+            });
+        } );
+        </script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css"> 
+    <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+<style>
+    /* Custom Datepicker Aesthetic Styles */
+.ui-datepicker {
+    background-color: #ffe6f2; /* Light pink background */
+    border: 1px solid #c96aa7; /* Dark pink border */
+    color: #4a4a4a; /* Dark gray text */
+    font-family: "Century Gothic", sans-serif;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.ui-datepicker-header {
+    background-color: #f9eaf3; /* Slightly darker pink header */
+    color: #4a4a4a;
+    border-bottom: 1px solid #c96aa7;
+    font-weight: bold;
+    padding: 8px;
+}
+
+.ui-datepicker-title {
+    color: #4a4a4a; /* Dark gray for title */
+}
+
+.ui-datepicker-prev, .ui-datepicker-next {
+    background: none;
+    border: none;
+    color: #c96aa7; /* Dark pink for navigation */
+}
+
+.ui-datepicker-prev:hover, .ui-datepicker-next:hover {
+    color: #b36b90; /* Slightly darker on hover */
+    cursor: pointer;
+}
+
+.ui-state-default {
+    background-color: #fde6f3; /* Light pink for date cells */
+    border-radius: 4px;
+    color: #4a4a4a;
+}
+
+.ui-state-default:hover {
+    background-color: #fccce7; /* Darker pink on hover */
+}
+
+.ui-state-active, .ui-state-highlight {
+    background-color: #c96aa7; /* Dark pink for selected date */
+    color: #ffffff;
+    border-radius: 4px;
+}
+/* Custom Styles for Animation Dropdown */
+select#anim {
+    width: 100%;
+    max-width: 300px;
+    padding: 8px;
+    background-color: #ffe6f2; /* Light pink background */
+    color: #4a4a4a; /* Dark gray text */
+    border: 1px solid #c96aa7; /* Dark pink border */
+    border-radius: 8px;
+    font-family: "Century Gothic", sans-serif;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    outline: none;
+    appearance: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+select#anim:hover {
+    background-color: #fde6f3; /* Slightly darker pink on hover */
+}
+
+select#anim option {
+    background-color: #ffe6f2; /* Same light pink for options */
+    color: #4a4a4a;
+}
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>jQuery UI Datepicker - Animations</h1>
+        <div class="row">
+          <div class="col-1">
+            <h3>widget</h3>
+                <ul><a href="../Accordion.html">Accordion</a></ul>
+                <ul><a href="/pages/Autocomplete.html">Autocomplete</a></ul>
+                <ul><a href="/pages/Button.html">Button</a></ul>
+                <ul><a href="/pages/Checkboxradio.html">Checkboxradio</a></ul>
+                <ul><a href="/pages/Controlgroup.html">Controlgroup</a></ul>
+                <ul><a href="/pages/Datepicker.html">Datepicker</a></ul>
+                <ul><a href="/pages/Dialog.html">Dialog</a></ul>
+                <ul><a href="/pages/Menu.html">Menu</a></ul>
+                <ul><a href="/pages/Progressbar.html">Progressbar</a></ul>
+                <ul><a href="/pages/Selectmenu.html">Selectmenu</a></ul>
+                <ul><a href="/pages/Slider.html">Slider</a></ul>
+                <ul><a href="/pages/Spinner.html">Spinner</a></ul>
+                <ul><a href="/pages/Tabs.html">Tabs</a></ul>
+                <ul><a href="/pages/Tooltip.html">Tooltip</a></ul>
+        
+        </div>
+           
+<p>Date: <input type="text" id="datepicker" size="30"></p>
+ 
+<p>Animations:<br>
+  <select id="anim">
+    <option value="show">Show (default)</option>
+    <option value="slideDown">Slide down</option>
+    <option value="fadeIn">Fade in</option>
+    <option value="blind">Blind (UI Effect)</option>
+    <option value="bounce">Bounce (UI Effect)</option>
+    <option value="clip">Clip (UI Effect)</option>
+    <option value="drop">Drop (UI Effect)</option>
+    <option value="fold">Fold (UI Effect)</option>
+    <option value="slide">Slide (UI Effect)</option>
+    <option value="">None</option>
+  </select>
+</p>
+ 
+   
+        </div>
+    </div>  
+    
+    <footer>
+        <p>College of Information and Computing Sciences &copy; 2022</p>  
+    </footer>
+
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <script>
+        $( function() {
+          $( "#datepicker" ).datepicker();
+          $( "#anim" ).on( "change", function() {
+            $( "#datepicker" ).datepicker( "option", "showAnim", $( this ).val() );
+          });
+        } );
+        </script>
+</body>
+</html>

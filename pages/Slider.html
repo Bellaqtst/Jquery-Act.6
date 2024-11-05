@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css"> 
+    <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <style>
+      #eq > span {
+        height:120px; float:left; margin:15px
+      }
+
+      /* Master Volume Slider Background */
+#master .ui-slider-range {
+    background-color: #c96aa7; /* Dark pink */
+}
+
+#master .ui-slider-handle {
+    background-color: #ffb6c1; /* Light pink handle */
+    border: 2px solid #c96aa7;
+    border-radius: 50%;
+    height: 18px;
+    width: 18px;
+    margin-top: -7px; /* Center handle vertically */
+}
+
+/* EQ Slider Background */
+#eq .ui-slider-range {
+    background-color: #c96aa7; /* Dark pink */
+}
+
+#eq .ui-slider-handle {
+    background-color: #ffb6c1; /* Light pink handle */
+    border: 2px solid #c96aa7;
+    border-radius: 50%;
+    height: 18px;
+    width: 18px;
+    margin-left: -7px; /* Center handle horizontally */
+}
+
+/* Slider Track Styling */
+.ui-slider {
+    background-color: #ffe6f2; /* Light pink track */
+    border-radius: 8px;
+}
+
+/* Master Volume and EQ Header Styling */
+.mix-vol p {
+    background-color: #c96aa7; /* Dark pink */
+    color: #fff; /* White text */
+    font-family: "Century Gothic", sans-serif;
+    border-radius: 4px;
+    padding: 8px;
+    margin: 10px 0;
+}
+
+      </style>
+
+</head>
+<body>
+    <div class="container">
+        <h1>jQuery UI Spinner - Slider</h1>
+        <div class="row">
+          <div class="col-1">
+            <h3>widget</h3>
+                <ul><a href="../Accordion.html">Accordion</a></ul>
+                <ul><a href="/pages/Autocomplete.html">Autocomplete</a></ul>
+                <ul><a href="/pages/Button.html">Button</a></ul>
+                <ul><a href="/pages/Checkboxradio.html">Checkboxradio</a></ul>
+                <ul><a href="/pages/Controlgroup.html">Controlgroup</a></ul>
+                <ul><a href="/pages/Datepicker.html">Datepicker</a></ul>
+                <ul><a href="/pages/Dialog.html">Dialog</a></ul>
+                <ul><a href="/pages/Menu.html">Menu</a></ul>
+                <ul><a href="/pages/Progressbar.html">Progressbar</a></ul>
+                <ul><a href="/pages/Selectmenu.html">Selectmenu</a></ul>
+                <ul><a href="/pages/Slider.html">Slider</a></ul>
+                <ul><a href="/pages/Spinner.html">Spinner</a></ul>
+                <ul><a href="/pages/Tabs.html">Tabs</a></ul>
+                <ul><a href="/pages/Tooltip.html">Tooltip</a></ul>
+            
+        </div>
+ <div class="mix-vol">
+  <p class="ui-state-default ui-corner-all ui-helper-clearfix" style="padding:4px;">
+    <span class="ui-icon ui-icon-volume-on" style="float:left; margin:-2px 5px 0 0;"></span>
+    Master volume
+  </p>
+   
+  <div id="master" style="width:260px; margin:15px;"></div>
+   
+  <p class="ui-state-default ui-corner-all" style="padding:4px;margin-top:4em;">
+    <span class="ui-icon ui-icon-signal" style="float:left; margin:-2px 5px 0 0;"></span>
+    Graphic EQ
+  </p>
+   
+  <div id="eq">
+    <span>88</span>
+    <span>77</span>
+    <span>55</span>
+    <span>33</span>
+    <span>40</span>
+    <span>45</span>
+    <span>70</span>
+  </div>
+      </div>  
+  
+ </div>        
+    
+    <footer>
+        <p>College of Information and Computing Sciences &copy; 2022</p>  
+    </footer>
+
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <script>
+      $( function() {
+        // setup master volume
+        $( "#master" ).slider({
+          value: 60,
+          orientation: "horizontal",
+          range: "min",
+          animate: true
+        });
+        // setup graphic EQ
+        $( "#eq > span" ).each(function() {
+          // read initial values from markup and remove that
+          var value = parseInt( $( this ).text(), 10 );
+          $( this ).empty().slider({
+            value: value,
+            range: "min",
+            animate: true,
+            orientation: "vertical"
+          });
+        });
+      } );
+      </script>
+</body>
+</html>
